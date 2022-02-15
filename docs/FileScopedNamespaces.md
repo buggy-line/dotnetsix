@@ -113,4 +113,4 @@ The `.editorconfig` file can be scoped to the entire solution or to a single pro
 
 ![editorconfig](images/editorconfig.png)
 
-The `.editorconfig` file should be versioned so that all project contributors use the same standard. You can see an example in the [current repository](https://github.com/buggy-line/dotnetsix/blob/main/dotnetsix/.editorconfig#L127).
+The `.editorconfig` file should be versioned so that all project contributors use the same standard. You can see an example in the [current repository](https://github.com/buggy-line/dotnetsix/blob/main/.editorconfig#L127).

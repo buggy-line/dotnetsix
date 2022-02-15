@@ -43,13 +43,13 @@ There is no well defined place to add these global usings, in theory you can add
 
 <br/>
 
-With that out of the way, I think a potential best practice is to use a file in the root of your project called [GlobalUsings.cs](https://github.com/buggy-line/dotnetsix/blob/main/dotnetsix/LanguageFeatures/GlobalUsings.cs) to aggregate your global namespaces. I will reference this practice again at the end of this page when discussing `implicit usings`.
+With that out of the way, I think a potential best practice is to use a file in the root of your project called [GlobalUsings.cs](https://github.com/buggy-line/dotnetsix/blob/main/LanguageFeatures/GlobalUsings.cs) to aggregate your global namespaces. I will reference this practice again at the end of this page when discussing `implicit usings`.
 
 <br/>
 
 ## Implicit (global) usings
 
-Implicit global usings are an optional feature enabled by default in new .NET 6/C# 10 projects. For existing projects that you want migrated, you will need a new entry in the [csproj files](https://github.com/buggy-line/dotnetsix/blob/main/dotnetsix/dotnetsix/dotnetsix.csproj#L6):
+Implicit global usings are an optional feature enabled by default in new .NET 6/C# 10 projects. For existing projects that you want migrated, you will need a new entry in the [csproj files](https://github.com/buggy-line/dotnetsix/blob/main/ConsoleApp/ConsoleApp.csproj#L6):
 
 ```XML
 <ImplicitUsings>enable</ImplicitUsings>
