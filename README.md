@@ -14,3 +14,4 @@ Before going through the code samples and documentation available here, you shou
 1. [Top level statements](docs/TopLevelStatements.md)
 2. [File scoped namespaces](docs/FileScopedNamespaces.md)
 3. [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
+4. [Record structs](docs/RecordStructs.md)
