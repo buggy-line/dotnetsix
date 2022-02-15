@@ -11,6 +11,6 @@ Before going through the code samples and documentation available here, you shou
 
  Now that you've familiarized yourself with the official docs, have a look through the next sections. The structure is [in progress] with .md files discussing the features + code files as xUnit tests or otherwise.
 
-[Top level statements](gdf)
- [File scoped namespaces](docs/FileScopedNamespaces.md) 
- [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
+1. [Top level statements](docs/TopLevelStatements.md)
+2. [File scoped namespaces](docs/FileScopedNamespaces.md)
+3. [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
