@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "here are your args, yarrrrr!"
+    }
+  }
+}

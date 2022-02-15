@@ -6,14 +6,12 @@ if (args.Length < 1)
 {
     Console.WriteLine("No arguments received");
 }
-
-foreach (var s in args)
+else
 {
-    Console.Write(s);
-    Console.Write(' ');
+    Console.WriteLine($"I received some parameters from somewhere: [{string.Join(", ", args)}]");
 }
 
-Console.WriteLine();
+Console.WriteLine("Please wait while I manage to think of something to say...");
 
 await ConsoleAnimation.ShowConsoleAnimation();
 
