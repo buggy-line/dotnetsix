@@ -112,13 +112,13 @@ I feel Microsoft made a mistake by adding Global Implicit Namespaces - _I'm usin
 
 ### The Problem
 
-But this isn't what I wanted to discuss. Implicit global namespaces  are hidden, one has to look for them in the obj folder to determine what's in there, and the list of implicit using is different from project to project.
+But this isn't what I wanted to discuss. Implicit global namespaces  are hidden, one has to look for them in the obj folder to determine what's in there, and the list of implicit using is different from project type to project type - see above the console vs web project examples.
 
-I'm sure this will cause painful debugging sessions once old projects are migrated to .NET6 and devs encounter namespace collisions or class name clashes. Doing a `Ctrl + Shift + F` will not help anyone find the namespace collision, but it will lead to some interesting stackoverflow discussions.
+This may trigger some painful debugging sessions once old projects are migrated to .NET6 and devs encounter namespace collisions or class name clashes. Doing a `Ctrl + Shift + F` won't help in finding the namespace collision, but it will lead to some interesting stackoverflow discussions.
 
 ### Potential Solution
 
-The sane solutions in my opinion would have been for Microsoft to use the other feature they introduced in C# 10: **Global Usings** (note the missing implicit keyword).
+The sane solutions in my opinion would have been for Microsoft to use the other feature they introduced in C# 10: [Global Usings](#global-usings).
 
 Basically, instead of hiding away the default list of namespaces at a _hidden location_ like `[ProjectName]\obj\Debug\net6.0\[ProjectName].GlobalUsings.g.cs` folder, they could have introduced a class such as `GlobalUsings.cs` by default in every new project.
 
