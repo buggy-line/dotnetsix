@@ -25,3 +25,24 @@ namespace Application
 Console.WriteLine("Hello, World!");
 ```
 
+A single line can now replace 12 lines of code :). It is almost as short as in Python:
+
+```Python
+print("Hello, World!")
+```
+
+## OK, but where are my arguments?
+
+You don't declare an args variable. For the single source file that contains your top-level statements, the compiler recognizes args to mean the command-line arguments. The type of args is a string[], as in all C# programs.
+
+Try executing the [ConsoleApp](https://github.com/buggy-line/dotnetsix/blob/main/ConsoleApp/Program.cs) in the current repository to understand how to use the new top level statements.
+
+## What about namespaces?
+
+You can read [here](GlobalAndImplicitUsings.md) on the use of implicit global usings/namespaces.
+
+## Community Response
+
+Although top level statements are easy to use for simple console apps, in more complex scenarios they can prove problematic, especially when coupled with global implicit usings. 
+
+The framework maintainers requested feedback on the new project templates using top-level statements, and considering the (negative) feedback they received, improvements could be introduced in the future https://github.com/dotnet/docs/issues/27420. The discussion is quite lively as of Feb 2022.
