@@ -2,7 +2,7 @@
 
 internal record struct User(string Name, DateTime Birthdate);
 
-//the above declaration will generate code similar to the below classical struct declaration
+//the above record declaration will generate code similar to the below classical struct declaration
 
 internal struct HandCraftedUserRecord
 {
@@ -53,7 +53,7 @@ public class Tests
     }
 
     [Fact]
-    public void WhenModifyingARecord()
+    public void WhenModifyingARecordLikeStruct()
     {
         var user1 = new HandCraftedUserRecord("Daniel", new DateTime(1990, 3, 21));
 
@@ -65,7 +65,7 @@ public class Tests
     }
 
     [Fact]
-    public void WhenCloningARecord()
+    public void WhenCloningARecordLikeStruct()
     {
         var user1 = new HandCraftedUserRecord("Daniel", new DateTime(1990, 3, 21));
 
@@ -78,7 +78,7 @@ public class Tests
     }
 
     [Fact]
-    public void WhenCopyingARecord()
+    public void WhenCopyingARecordLikeStruct()
     {
         var user1 = new HandCraftedUserRecord("Daniel", new DateTime(1990, 3, 21));
 
@@ -92,7 +92,7 @@ public class Tests
     }
 
     [Fact]
-    public void WhenAddingRecordsToHashSet()
+    public void WhenAddingARecordLikeStructToHashSet()
     {
         var user1 = new HandCraftedUserRecord("Daniel", new DateTime(1990, 3, 21));
         var user2 = new HandCraftedUserRecord("Daniel", new DateTime(1990, 3, 21));

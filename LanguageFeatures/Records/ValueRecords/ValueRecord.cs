@@ -1,11 +1,6 @@
-﻿global using Xunit;
-namespace ValueRecord
-{
-
-}
+﻿namespace ValueRecords;
 
 internal record struct User (string Name, DateTime Birthdate);
-
 
 public class Tests
 {
