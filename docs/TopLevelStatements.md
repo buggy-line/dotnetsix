@@ -1,7 +1,7 @@
 # Top level statements
 
 Top level statements reduce the amount of boiler code necessary for certain projects such as connsole applications.
-Although these were introduced with C# 9, they've been simplified in C# 10, the top level usings are not longer necessary, and are now used in the in the default Visual Studio project templates.
+Although these were introduced with C# 9, they've been simplified in C# 10, the top level usings are no longer necessary, and are now used in the default Visual Studio project templates.
 
 > Default console app startup file prior to C# 10
 
