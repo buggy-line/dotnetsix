@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this repository I will try to go over a few scenarios that make use of the new features introduced with C# 10 (available in .NET 6 solutions).
+In this repository I will try to go over a few scenarios that make use of the new features introduced in C# 10 (available via .NET 6 SDK).
 
 Before going through the code samples and documentation available here, you should read the oficial documentation from Microsoft available below:
 
