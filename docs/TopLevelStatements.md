@@ -56,7 +56,7 @@ If both top level statements and a `Main` method are added to a project, no erro
 
 ## OK, but where are my arguments?
 
-You don't declare an args variable. For the single source file that contains your top-level statements, the compiler recognizes args to mean the command-line arguments. The type of args is a string[], as in all C# programs.
+You don't declare an `args` variable. For the single source file that contains your top-level statements, the compiler recognizes `args` to mean the command-line arguments. The type of args is a `string[]`, as in all C# programs.
 
 Try executing the [ConsoleApp](https://github.com/buggy-line/dotnetsix/blob/main/ConsoleApp/Program.cs) in the current repository to understand how to use the new top level statements.
 
