@@ -64,5 +64,88 @@ A positional `record` or `class record` and a positional `readonly record struct
 
 I'm not sure why `records` are immutable by default while `readonly` has to be added to a `record struct` to make it immutable. I assume the language designers preferred [`tuples`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples) and `record structs` to be kept consistent instead.
 
-## More to follow
-I'll expand this section in the near future, but for now you can read the official docs and play with some of the test scenarios available here https://github.com/buggy-line/dotnetsix/tree/main/LanguageFeatures/Records/ValueRecords. 
+## Differences between class records and struct records
+
+### Semantics
+
+A `record class` or `record` has reference semantics, while a `record struct` has value semantics. This matters most when you use mutable records.
+
+Passing a record struct to a method creates a copy of that record. Changing a property on the copy **does not** impact the initial record.
+
+> Value semantics
+```C#
+internal record struct User(string Name, DateTime Birthdate); //positional syntax creates a mutable `record struct`
+
+[Fact]
+public void WhenModifyingARecordOutsideCurrentScope()
+{
+    var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+    var user2 = ChangeName(user1, "Gandalf");
+
+    Assert.Equal("Daniel", user1.Name); // user1.Name is still 'Daniel', passing a value type to the ChangeName method creates a new value type scoped to that method.
+    Assert.NotEqual(user1, user2);
+    Assert.NotEqual(user1.GetHashCode(), user2.GetHashCode());
+
+    static User ChangeName(User user, string name)
+    {
+        user.Name = name;
+        return user;
+    }
+}
+```
+
+Passing a record class to a method creates a copy of that record's reference. Changing a property on the reference **does** impact the initial record.
+> Reference semantics
+```C#
+internal record class User // we need explicit syntax to create a mutable `record class`
+{
+    public User(string name, DateTime birthdate){ Name = name; Birthdate = birthdate;}
+    public string? Name { get; set; } = default;
+    public DateTime Birthdate { get; set; } = default;
+}
+
+public class Tests
+{
+    [Fact]
+    public void WhenModifyingARecordOutsideCurrentScope()
+    {
+        var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+        var user2 = ChangeName(user1, "Gandalf");
+
+        Assert.Equal("Gandalf", user1.Name); // user1.Name is now Gandalf.
+        Assert.Equal(user1, user2);
+        Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
+
+        static User ChangeName(User user, string name)
+        {
+            user.Name = name;
+            return user;
+        }
+    }
+}
+
+```
+
+If you want changes to a record struct's properties reflected at the call site, use `ref` or `out` keywords to pass by reference.
+
+```C#
+internal record struct User(string Name, DateTime Birthdate); //positional syntax creates a mutable `record struct`
+
+[Fact]
+public void WhenModifyingARecordOutsideCurrentScopePassByRef()
+{
+    var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+    var user2 = ChangeName(ref user1, "Gandalf");
+
+    Assert.Equal("Gandalf", user1.Name); // user1.Name is now Gandalf, the record struct was passed by reference
+    Assert.Equal(user1, user2);
+    Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
+
+    static User ChangeName(ref User user, string name)
+    {
+        user.Name = name;
+        return user;
+    }
+}
+
+```

@@ -120,6 +120,6 @@ This may trigger some painful debugging sessions once old projects are migrated 
 
 The sane solutions in my opinion would have been for Microsoft to use the other feature they introduced in C# 10: [Global Usings](#global-usings).
 
-Basically, instead of hiding away the default list of namespaces at a _hidden location_ like `[ProjectName]\obj\Debug\net6.0\[ProjectName].GlobalUsings.g.cs` folder, they could have introduced a class such as `GlobalUsings.cs` by default in every new project.
+Basically, instead of hiding away the default list of namespaces at a _hidden location_ like the `[ProjectName]\obj\Debug\net6.0\[ProjectName].GlobalUsings.g.cs` folder, they could have introduced a class such as `GlobalUsings.cs` by default in every new project.
 
 This approach allows the developer to easily gawk at the default namespaces and quickly fix whatever weird namespace issue he's debugging.

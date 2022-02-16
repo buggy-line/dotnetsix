@@ -1,6 +1,6 @@
 ﻿namespace ValueRecords;
 
-internal record struct User (string Name, DateTime Birthdate);
+internal record struct User(string Name, DateTime Birthdate); // positional syntax creates a mutable record struct
 
 public class Tests
 {
@@ -71,5 +71,39 @@ public class Tests
 
         Assert.True(user1Added);
         Assert.False(user2Added);
+    }
+
+    [Fact]
+    public void WhenModifyingARecordOutsideCurrentScope()
+    {
+        var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+        var user2 = ChangeName(user1, "Gandalf");
+
+        Assert.Equal("Daniel", user1.Name);
+        Assert.NotEqual(user1, user2);
+        Assert.NotEqual(user1.GetHashCode(), user2.GetHashCode());
+
+        static User ChangeName(User user, string name)
+        {
+            user.Name = name;
+            return user;
+        }
+    }
+
+    [Fact]
+    public void WhenModifyingARecordOutsideCurrentScopePassByRef()
+    {
+        var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+        var user2 = ChangeName(ref user1, "Gandalf");
+
+        Assert.Equal("Gandalf", user1.Name);
+        Assert.Equal(user1, user2);
+        Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
+
+        static User ChangeName(ref User user, string name)
+        {
+            user.Name = name;
+            return user;
+        }
     }
 }
