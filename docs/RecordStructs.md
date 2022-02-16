@@ -127,7 +127,7 @@ public class Tests
 ```
 
 If you want changes to a record struct's properties reflected at the call site, use `ref` or `out` keywords to pass by reference.
-
+> Value semantics with pass by reference `ref`
 ```C#
 internal record struct User(string Name, DateTime Birthdate); //positional syntax creates a mutable `record struct`
 
