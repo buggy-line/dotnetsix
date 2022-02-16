@@ -25,7 +25,7 @@ class MyClass
 }
 ```
 
-The reduced nesting should make code easier to read and it also saved 2 vertical lines - the curly braces used t define the namespace scope.
+The reduced nesting should make code easier to read and it also saved 2 vertical lines - the curly braces used to define the namespace scope.
 
 <br/>
 
