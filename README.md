@@ -15,3 +15,4 @@ Before going through the code samples and documentation available here, you shou
 2. [File scoped namespaces](docs/FileScopedNamespaces.md)
 3. [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
 4. [Record structs](docs/RecordStructs.md)
+5. [Caller argument expressions](docs/CallerArgumentExpressions.md)

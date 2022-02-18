@@ -4,14 +4,21 @@ namespace CallerArgument;
 
 internal static class CallerArgument
 {
-    public static string CheckGeneratedCallerArgument(decimal value,
-    [CallerArgumentExpression("value")] string? message = null)
+    public static string CheckGeneratedCallerArgument(decimal value, 
+        [CallerArgumentExpression("value")] string? message = null)
     {
         Console.WriteLine($"Value: {message}");
         return message;
     }
 }
 
+internal class SimpleMath
+{
+    public decimal Sum(decimal a, decimal b)
+    {
+        return a + b;
+    }
+}
 
 public class Tests
 {
@@ -34,13 +41,5 @@ public class Tests
 
         var methodInvocation = CallerArgument.CheckGeneratedCallerArgument(new SimpleMath().Sum(21, 21), "");
         Assert.Equal("new SimpleMath().Sum(21, 21)", methodInvocation);
-    }
-
-    internal class SimpleMath
-    {
-        public decimal Sum(decimal a, decimal b)
-        {
-            return a + b;
-        }
     }
 }
