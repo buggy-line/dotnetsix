@@ -94,7 +94,7 @@ string? nullString = null;
 referenceWrapper.Value = nullString;  //warning: possible null reference assignment
 ```
 
-The warning can be easily silence using the [null forgiving operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-forgiving) `!`
+The warning can be easily silenced using the [null forgiving operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-forgiving) `!`
 
 ```C#
 var referenceWrapper = new Wrapper<string>("foobar");
