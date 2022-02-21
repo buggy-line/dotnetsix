@@ -1,15 +1,15 @@
 ﻿namespace ImmutableValueRecords;
 
-internal readonly record struct User(string Name, DateTime Birthdate)
+internal readonly record struct User(string? Name, DateTime Birthdate)
 {
-    public List<string> Stuff { get; init; } = new List<string>();
+    public List<string>? Stuff { get; init; } = new List<string>();
 
     public User() : this(string.Empty, default)
     {
 
     }
 
-    public User(string Name, DateTime Birthdate, List<string> stuff) : this(Name, Birthdate)
+    public User(string? Name, DateTime Birthdate, List<string>? stuff) : this(Name, Birthdate)
     {
         Stuff = stuff;
     }
@@ -59,7 +59,7 @@ public class Tests
         Assert.Equal(user1, user2);
         Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
 
-        user1.Stuff.Add("something");
+        user1.Stuff?.Add("something");
         Assert.Equal(user1, user2);
         Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
 
@@ -70,7 +70,7 @@ public class Tests
         Assert.Equal(user1, user2);
         Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
 
-        user1.Stuff.Add("something");
+        user1.Stuff?.Add("something");
         Assert.Equal(user1, user2);
         Assert.Equal(user1.GetHashCode(), user2.GetHashCode());
     }

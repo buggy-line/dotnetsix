@@ -16,3 +16,4 @@ Before going through the code samples and documentation available here, you shou
 3. [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
 4. [Record structs](docs/RecordStructs.md)
 5. [Caller argument expressions](docs/CallerArgumentExpressions.md)
+6. [NullableReferenceTypes](docs/NullableReferenceTypes.md)

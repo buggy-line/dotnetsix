@@ -4,7 +4,7 @@ namespace CallerArgument;
 
 internal static class CallerArgument
 {
-    public static string CheckGeneratedCallerArgument(decimal value, 
+    public static string? CheckGeneratedCallerArgument(decimal value, 
         [CallerArgumentExpression("value")] string? message = null)
     {
         Console.WriteLine($"Value: {message}");
