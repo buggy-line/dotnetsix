@@ -1,6 +1,6 @@
 # Nullable reference types
 
-Although introduced with C# 10, nullable reference types were not enabled by default. This changes with .NET 6 - null state analysis and variable annotations are enabled by default for new projects. For old projects they are still disabled.
+Although introduced with C# 8, nullable reference types were not enabled by default. This changes with .NET 6 - null state analysis and variable annotations are enabled by default for new projects. For old projects they are still disabled.
 
 To set nullable references as the default for existing projects, add the `<nullable>Enable</nullable>` flag to the project settings.
 
