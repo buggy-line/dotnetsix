@@ -2,6 +2,20 @@
 
 Although not an language feature, LINQ is part of the core .,NET libraries, and in .NET 6 it has some interesting new additions.
 
+## Chunk
+`Chunk` allows one to split an enumerable into batches or chunks of a fixed length. The last chunk will contain the remaining elements and may be of a smaller size.
+
+``` C#
+var items = new List<int> { 0, 1, 2, 3, 4 }; // 5 items
+var chunks = items.Chunk(3);
+
+// {
+//     new [] { 0, 1, 2 },
+//     new [] { 3, 4}
+// }
+
+```
+
 ## MaxBy and MinBy
 
 ``` C#

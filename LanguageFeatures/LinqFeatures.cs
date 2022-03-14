@@ -145,7 +145,7 @@ public class LinqFeatures
 
 
         var intersectionByColor = distinctShapesByName.IntersectBy(distinctShapesByColors.Select(s => s.Color), s => s.Color);
-        Assert.Equal(intersectionByColor, 
+        Assert.Equal(intersectionByColor,
             new List<(string Name, string Color)>
             {
                 new ("Square", "Red"),
@@ -188,4 +188,19 @@ public class LinqFeatures
                 new ("Circle", "Yellow"),
             });
     }
+
+    [Fact]
+    public void WhenUsingChunk()
+    {
+        var items = new List<int> { 0, 1, 2, 3, 4 }; // 5 items
+        var chunks = items.Chunk(3);
+
+        Assert.Equal(chunks, new List<int[]>
+        {
+            new [] { 0, 1, 2 },
+            new [] { 3, 4}
+        });
+    }
 }
+
+
