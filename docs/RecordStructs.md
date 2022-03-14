@@ -176,7 +176,7 @@ var user1Added = hashSet.Add(user1); // added to hash set
 var user2Added = hashSet.Add(user2); // added to hash set, the user1.Stuff and user2.Stuff are not the same object even if the contents are identical
 ```
 
-With a User record missing `User.Stuff` field, adding the user2 to the hashSet behaves differently.
+If the User record did not have the `User.Stuff` field, adding the user2 to the hashSet would behave differently.
 
 ``` C#
 record struct User(string? Name, DateTime Birthdate);
