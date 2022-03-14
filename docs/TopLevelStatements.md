@@ -40,8 +40,23 @@ A single line can now replace 12 lines of code :). It is almost as short as in P
 print("Hello, World!")
 ```
 
-<br/>
+## Minimal Web Api
+Top level statements also allow for very simple ASP.NET Web API projects, 5 lines are enough (or 4 without https):
 
+``` C#
+var builder = WebApplication.CreateBuilder(args);
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+
+app.MapGet("/hey", () => "Hello World!").WithName("Hello World");
+
+app.Run();
+
+See an example under 
+
+```
 ## Limitations
 
 As in C# 9, only one file with top level statements can be present in a project, otherwise the following error is thrown: 
@@ -52,7 +67,6 @@ If both top level statements and a `Main` method are added to a project, no erro
 
 > warning CS7022: The entry point of the program is global code; ignoring 'Program.Main(string[])' entry point.
 
-<br/>
 
 ## OK, but where are my arguments?
 
@@ -60,13 +74,13 @@ You don't declare an `args` variable. For the single source file that contains y
 
 Try executing the [ConsoleApp](https://github.com/buggy-line/dotnetsix/blob/main/ConsoleApp/Program.cs) in the current repository to understand how to use the new top level statements.
 
-<br/>
+
 
 ## What about namespaces?
 
 You can read [here](GlobalAndImplicitUsings.md) on the use of implicit global usings/namespaces.
 
-<br/>
+
 
 ## Community Response
 
