@@ -14,7 +14,8 @@ Before going through the code samples and documentation available here, you shou
 1. [Top level statements](docs/TopLevelStatements.md)
 2. [File scoped namespaces](docs/FileScopedNamespaces.md)
 3. [Global and implicit usings](docs/GlobalAndImplicitUsings.md)
-4. [Record structs](docs/RecordStructs.md)
-5. [Caller argument expressions](docs/CallerArgumentExpressions.md)
-6. [Nullable reference types](docs/NullableReferenceTypes.md)
-7. [New LINQ features](docs/NewLinqFeatures.md)
+4. [Nullable reference types](docs/NullableReferenceTypes.md)
+5. [New LINQ features](docs/NewLinqFeatures.md)
+6. [Record structs](docs/RecordStructs.md)
+7. [Caller argument expressions](docs/CallerArgumentExpressions.md)
+
