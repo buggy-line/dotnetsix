@@ -46,7 +46,7 @@ var minPopulation = EstimatedPopulation.MinBy(x => x.Count);
 var maxPopulation = EstimatedPopulation.MaxBy(x => x.Count);
 ```
 
-Note than `MinBy` is not the same as the `Min` overload that takes a selector function:
+Note that `MinBy` is not the same as the `Min` overload that takes a selector function:
 
 
 ``` C#
