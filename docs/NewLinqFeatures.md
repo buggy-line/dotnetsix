@@ -24,7 +24,7 @@ Assert.Equal(items[items.Count - 2], secondToLast);
 var lastTwo = items.Take(^2..);
 Assert.Equal(new[] {"three", "four"}, lastTwo);
 
-var take3AndSkip2 = items.Take(^3..^2); // take last3 and then skip the last two
+var take3AndSkip2 = items.Take(^3..^2); // take last 3 and then skip the last 2
 Assert.Equal(new[] { "two" }, take3AndSkip2);
 ```
 
