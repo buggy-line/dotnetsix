@@ -56,7 +56,7 @@ var shapes = new List<(string Name, stringColor)>
     new ("Circle", "Red"),
     new ("Triangle", "Green"),
     new ("Square", "Blue"),
-    new ("Circle", "Yellow")
+    new ("Circle", "Yellow"),
 };
 ```
 
@@ -91,7 +91,7 @@ distinctShapesByName = new List<(string Name, string Color)>
 {
     new ("Square", "Red"),
     new ("Circle", "Red"),
-    new ("Triangle", "Green")
+    new ("Triangle", "Green"),
 };
 
 distinctShapesByColors = new List<(string Name, string Color)>
@@ -99,7 +99,7 @@ distinctShapesByColors = new List<(string Name, string Color)>
      new ("Square", "Red"),
      new ("Triangle", "Green"),
      new ("Square", "Blue"),
-     new ("Circle", "Yellow")
+     new ("Circle", "Yellow"),
  };
 
 var intersectionByColor = distinctShapesByName.IntersectBy(distinctShapesByColors.Select(s => s.Color), s => s.Color);
@@ -118,7 +118,7 @@ distinctShapesByName = new List<(string Name, string Color)>
 {
     new ("Square", "Red"),
     new ("Circle", "Red"),
-    new ("Triangle", "Green")
+    new ("Triangle", "Green"),
 };
 
 distinctShapesByColors = new List<(string Name, string Color)>
@@ -126,7 +126,7 @@ distinctShapesByColors = new List<(string Name, string Color)>
     new ("Square", "Red"),
     new ("Triangle", "Green"),
     new ("Square", "Blue"),
-    new ("Circle", "Yellow")
+    new ("Circle", "Yellow"),
 };
 
 var exceptByColor = distinctShapesByColors.ExceptBy(distinctShapesByName.Select(s => s.Color), s => s.Color);
