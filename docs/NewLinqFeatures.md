@@ -2,6 +2,33 @@
 
 Although not an language feature, LINQ is part of the core .,NET libraries, and in .NET 6 it has some interesting new additions.
 
+## Index `^` and Range `..` operators
+Although introduced in C# 8, the  [Index `^` and Range `..` operators](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/ranges-indexes) can now be used with LINQ as well via methods like `Take`.
+
+``` C#
+var items = new List<string>
+{
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four"
+};
+
+var last = items.ElementAt(^1);
+var secondToLast = items.ElementAt(^2);
+
+Assert.Equal(items.Last(), last); 
+Assert.Equal(items[items.Count - 2], secondToLast);
+
+var lastTwo = items.Take(^2..);
+Assert.Equal(new[] {"three", "four"}, lastTwo);
+
+var take3AndSkip2 = items.Take(^3..^2); // take last3 and then skip the last two
+Assert.Equal(new[] { "two" }, take3AndSkip2);
+```
+
+
 ## Chunk
 `Chunk` allows one to split an enumerable into batches or chunks of a fixed length. The last chunk will contain the remaining elements and may be of a smaller size.
 

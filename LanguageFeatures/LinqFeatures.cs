@@ -201,6 +201,31 @@ public class LinqFeatures
             new [] { 3, 4}
         });
     }
+
+    [Fact]
+    public void WhenUsingRangeAndIndex()
+    {
+        var items = new List<string>
+        {
+            "zero",
+            "one",
+            "two",
+            "three",
+            "four"
+        };
+
+        var last = items.ElementAt(^1);
+        var secondToLast = items.ElementAt(^2);
+
+        Assert.Equal(items.Last(), last); 
+        Assert.Equal(items[items.Count - 2], secondToLast);
+
+        var lastTwo = items.Take(^2..);
+        Assert.Equal(new[] {"three", "four"}, lastTwo);
+
+        var take3AndSkip2 = items.Take(^3..^2); // take last 3 and then skip the last two
+        Assert.Equal(new[] { "two" }, take3AndSkip2);
+    }
 }
 
 
