@@ -181,8 +181,8 @@ If the User record did not have the `User.Stuff` field, adding the user2 to the 
 ``` C#
 record struct User(string? Name, DateTime Birthdate);
 
-var user1 = new User("Daniel", new DateTime(1990, 3, 21), new List<string> {"foo", "bar"});
-var user2 = new User("Daniel", new DateTime(1990, 3, 21), new List<string> {"foo", "bar"});
+var user1 = new User("Daniel", new DateTime(1990, 3, 21));
+var user2 = new User("Daniel", new DateTime(1990, 3, 21));
 
 var hashSet = new HashSet<User>();
 var user1Added = hashSet.Add(user1); // added to hash set
