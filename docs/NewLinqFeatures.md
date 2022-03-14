@@ -45,10 +45,8 @@ int alsoMinCount = EstimatedPopulation.Select(x => x.Count).Min(); // longer ver
 
 ```
 
-
-## DistinctBy, IntersectBy, ExceptBy and UnionBy  
-
-### `DistinctBy` is  similar to MaxBy/MinBy, it allows one to pass in a predicate used to find distinct items. In past framework versions one had to use the `GroupBy` statement to achive similar functionality - unless the objects in the collection implemented `IEquatable` or an `IEqualityComparer`
+## DistinctBy
+`DistinctBy` is  similar to MaxBy/MinBy, it allows one to pass in a predicate used to find distinct items. In past framework versions one had to use the `GroupBy` statement to achive similar functionality - unless the objects in the collection implemented `IEquatable` or an `IEqualityComparer`
 
 
 ``` C#
@@ -84,10 +82,26 @@ var distinctShapesByColors = shapesDistinctBy(s => s.Color);
 //     new ("Circle", "Yellow")
 // }
 ```
-
-### `IntersectBy` takes two sets and finds the common values between them and ignores the rest:
+## IntersectBy
+`IntersectBy` takes two sets and finds the common values between them and ignores the rest:
 
 ``` C#
+
+distinctShapesByName = new List<(string Name, string Color)>
+{
+    new ("Square", "Red"),
+    new ("Circle", "Red"),
+    new ("Triangle", "Green")
+};
+
+distinctShapesByColors = new List<(string Name, string Color)>
+ {
+     new ("Square", "Red"),
+     new ("Triangle", "Green"),
+     new ("Square", "Blue"),
+     new ("Circle", "Yellow")
+ };
+
 var intersectionByColor = distinctShapesByName.IntersectBy(distinctShapesByColors.Select(s => s.Color), s => s.Color);
 
 // {
@@ -100,6 +114,21 @@ var intersectionByColor = distinctShapesByName.IntersectBy(distinctShapesByColor
 ### `ExceptBy` is the opposite of `IntersectBy`, it finds items that dont appear in both sources.
 
 ``` C#
+distinctShapesByName = new List<(string Name, string Color)>
+{
+    new ("Square", "Red"),
+    new ("Circle", "Red"),
+    new ("Triangle", "Green")
+};
+
+distinctShapesByColors = new List<(string Name, string Color)>
+{
+    new ("Square", "Red"),
+    new ("Triangle", "Green"),
+    new ("Square", "Blue"),
+    new ("Circle", "Yellow")
+};
+
 var exceptByColor = distinctShapesByColors.ExceptBy(distinctShapesByName.Select(s => s.Color), s => s.Color);
 
 // {
@@ -108,8 +137,8 @@ var exceptByColor = distinctShapesByColors.ExceptBy(distinctShapesByName.Select(
 // }
 
 ```
-
-`UnionBy` is the last one in the series, it iterarates over all the elements in the first and second collection, yielding only once each unique element - according to the predicate.
+## UnionBy
+`UnionBy` iterarates over all the elements in the first and second collection, yielding only once each unique element - according to the predicate.
 
 ``` c#
 var squares = new List<(string Name, stringColor)>
