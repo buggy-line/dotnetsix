@@ -39,7 +39,7 @@ public class Tests
         var lambdaInvocation = CallerArgument.CheckGeneratedCallerArgument(sum(21, 21)); 
         Assert.Equal("sum(21, 21)", lambdaInvocation);
 
-        var methodInvocation = CallerArgument.CheckGeneratedCallerArgument(new SimpleMath().Sum(21, 21), "");
+        var methodInvocation = CallerArgument.CheckGeneratedCallerArgument(new SimpleMath().Sum(21, 21));
         Assert.Equal("new SimpleMath().Sum(21, 21)", methodInvocation);
     }
 }
