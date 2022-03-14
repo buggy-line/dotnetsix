@@ -41,7 +41,7 @@ print("Hello, World!")
 ```
 
 ## Minimal Web Api
-Top level statements also allow for very simple ASP.NET Web API projects, 5 lines are enough (or 4 without https):
+Top level statements also allow for [minimal ASP.NET Web API](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio) projects, 5 lines are enough (or 4 without https):
 
 ``` C#
 var builder = WebApplication.CreateBuilder(args);
@@ -54,9 +54,13 @@ app.MapGet("/hey", () => "Hello World!").WithName("Hello World");
 
 app.Run();
 
-See an example under 
-
 ```
+
+You can play with [this simple hello world api project](https://github.com/buggy-line/dotnetsix/blob/main/SimpleApi/Program.cs) that also has swagger integration, or create a new one in under a minute.
+
+Note that minimal web APIs have important limitations, please read the [documentation from Microsoft](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio#differences-between-minimal-apis-and-apis-with-controllers).
+
+
 ## Limitations
 
 As in C# 9, only one file with top level statements can be present in a project, otherwise the following error is thrown: 
