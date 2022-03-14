@@ -17,4 +17,4 @@ Before going through the code samples and documentation available here, you shou
 4. [Record structs](docs/RecordStructs.md)
 5. [Caller argument expressions](docs/CallerArgumentExpressions.md)
 6. [Nullable reference types](docs/NullableReferenceTypes.md)
-7. [New LINQ features](docs/NewLinqFeatures)
+7. [New LINQ features](docs/NewLinqFeatures.md)
