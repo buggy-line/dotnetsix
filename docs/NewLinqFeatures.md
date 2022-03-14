@@ -110,8 +110,8 @@ var intersectionByColor = distinctShapesByName.IntersectBy(distinctShapesByColor
 // }
 
 ```
-
-### `ExceptBy` is the opposite of `IntersectBy`, it finds items that dont appear in both sources.
+## ExceptBy
+`ExceptBy` is the opposite of `IntersectBy`, it finds items that dont appear in both sources.
 
 ``` C#
 distinctShapesByName = new List<(string Name, string Color)>
